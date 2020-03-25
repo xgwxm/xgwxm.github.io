@@ -5,6 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 4.2.0">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -14,10 +29,11 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="提供了几种hexo博客美化配置教程">
@@ -74,8 +90,9 @@
 <meta property="og:image" content="http://yoursite.com/2020/03/21/hexoui/35a85edf8db1cb13ffc1a9e2e614584893584b59.png">
 <meta property="og:image" content="http://yoursite.com/2020/03/21/hexoui/8435e5dde71190efa3cacb29f55b9310fcfa60dd.jpeg">
 <meta property="article:published_time" content="2020-03-21T05:32:39.000Z">
-<meta property="article:modified_time" content="2020-03-21T07:56:57.328Z">
+<meta property="article:modified_time" content="2020-03-22T01:48:00.770Z">
 <meta property="article:author" content="常青藤">
+<meta property="article:tag" content="教程，软件，分享">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/2020/03/21/hexoui/hexo1_1.png">
 
@@ -128,6 +145,7 @@
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
     <div class="headband"></div>
+    <a href="https://github.com/xgwxm" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
@@ -148,10 +166,12 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+        <p class="site-subtitle">明白一点，知晓一点，能干一点</p>
   </div>
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -170,9 +190,44 @@
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 
 </nav>
+  <div class="site-search">
+    <div class="search-pop-overlay">
+  <div class="popup search-popup">
+      <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+  </div>
+</div>
+
+  </div>
 </div>
     </header>
 
@@ -201,7 +256,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="常青藤">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="软件、教程分享，关注黑苹果，phthon等">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -218,12 +273,53 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-03-21 13:32:39 / 修改时间：15:56:57" itemprop="dateCreated datePublished" datetime="2020-03-21T13:32:39+08:00">2020-03-21</time>
+              <time title="创建时间：2020-03-21 13:32:39" itemprop="dateCreated datePublished" datetime="2020-03-21T13:32:39+08:00">2020-03-21</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-03-22 09:48:00" itemprop="dateModified" datetime="2020-03-22T09:48:00+08:00">2020-03-22</time>
+              </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/03/21/hexoui/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/21/hexoui/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -235,44 +331,129 @@
 
       
         <blockquote>
-<p>提供了几种hexo博客美化配置教程</p>
+<p> 提供了几种hexo博客美化配置教程</p>
 </blockquote>
 <a id="more"></a>
-<h3 id="1-修改主题页面布局为圆角"><a href="#1-修改主题页面布局为圆角" class="headerlink" title="1.修改主题页面布局为圆角"></a>1.修改主题页面布局为圆角</h3><p>修改主题页面为圆角，有两种方法：<br>第一种：<br>打开文件，路径：/themes/next/source/css/_variables/custom.styl<br><img src="/2020/03/21/hexoui/hexo1_1.png" alt><br>复制粘贴以下代码：</p>
+<h3 id="1-修改主题页面布局为圆角"><a href="#1-修改主题页面布局为圆角" class="headerlink" title="1.修改主题页面布局为圆角"></a>1.修改主题页面布局为圆角</h3><p>修改主题页面为圆角，有两种方法：<br>第一种：<br>打开文件，路径：/themes/next/source/css/_variables/custom.styl</p>
+<img data-src="/2020/03/21/hexoui/hexo1_1.png" class="">
+<p>复制粘贴以下代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 修改主题页面布局为圆角&#x2F;&#x2F; </span><br><span class="line">&#x2F;&#x2F;Variables of Gemini scheme&#x2F;&#x2F;</span><br><span class="line">&#x2F;&#x2F;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line">@import &quot;Pisces.styl&quot;;</span><br><span class="line">&#x2F;&#x2F; Settings for some of the most global styles.</span><br><span class="line">&#x2F;&#x2F; --------------------------------------------------</span><br><span class="line">$body-bg-color &#x3D; #eee</span><br><span class="line">&#x2F;&#x2F; Borders.</span><br><span class="line">&#x2F;&#x2F; --------------------------------------------------</span><br><span class="line">$box-shadow-inner &#x3D; 0 2px 2px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.06), 0 1px 5px 0 rgba(0,0,0,.12)</span><br><span class="line">$box-shadow &#x3D; 0 2px 2px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.06), 0 1px 5px 0 rgba(0,0,0,.12), 0 -1px .5px 0 rgba(0,0,0,.09)</span><br><span class="line">$border-radius-inner &#x3D; initial</span><br><span class="line">$border-radius &#x3D; initial</span><br><span class="line">$border-radius-inner &#x3D; 15px 15px 15px 15px;$border-radius &#x3D; 15px;</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/03/21/hexoui/hexo1_2.jpeg" alt></p>
+<img data-src="/2020/03/21/hexoui/hexo1_2.jpeg" class="">
+
 <p>保存后本地预览，可以看到四周都为圆角了。</p>
-<p><img src="/2020/03/21/hexoui/hexo1_3.jpeg" alt></p>
+<img data-src="/2020/03/21/hexoui/hexo1_3.jpeg" class="">
+
 <p>第二种：</p>
 <p>打开文件，路径：\themes\next\source\css_variables\Gemini.styl ，添加以下代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 修改主题页面布局为圆角</span><br><span class="line">$border-radius-inner &#x3D; 15px 15px 15px 15px;$border-radius &#x3D; 15px;</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/03/21/hexoui/hexo1_4.jpeg" alt><br>保存后本地预览，四周为圆角。<br><img src="/2020/03/21/hexoui/hexo1_5.jpeg" alt></p>
-<h3 id="2-去掉顶部黑线"><a href="#2-去掉顶部黑线" class="headerlink" title="2.去掉顶部黑线"></a>2.去掉顶部黑线</h3><p>顶部黑线如下图：<br><img src="/2020/03/21/hexoui/hexo2_1.png" alt><br>打开文件，路径：themes\next\source\css_custom\custom.styl ，添加以下代码：</p>
+<img data-src="/2020/03/21/hexoui/hexo1_4.jpeg" class="">
+<p>保存后本地预览，四周为圆角。</p>
+<img data-src="/2020/03/21/hexoui/hexo1_5.jpeg" class="">
+
+<h3 id="2-去掉顶部黑线"><a href="#2-去掉顶部黑线" class="headerlink" title="2.去掉顶部黑线"></a>2.去掉顶部黑线</h3><p>顶部黑线如下图：</p>
+<img data-src="/2020/03/21/hexoui/hexo2_1.png" class="">
+<p>打开文件，路径：themes\next\source\css_custom\custom.styl ，添加以下代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;去掉顶部黑线：</span><br><span class="line">.headband &#123;display:none;&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/03/21/hexoui/hexo2_2.jpeg" alt><br>保存后本地预览，顶部黑线已经去掉。<br><img src="/2020/03/21/hexoui/hexo2_3.png" alt></p>
+<img data-src="/2020/03/21/hexoui/hexo2_2.jpeg" class="">
+<p>保存后本地预览，顶部黑线已经去掉。</p>
+<img data-src="/2020/03/21/hexoui/hexo2_3.png" class="">
+
 <h3 id="3-添加动态背景—粒子漂浮聚合"><a href="#3-添加动态背景—粒子漂浮聚合" class="headerlink" title="3.添加动态背景—粒子漂浮聚合"></a>3.添加动态背景—粒子漂浮聚合</h3><p>我还以为把动态背景已经写到了教程里了，结果一看没有，赶紧补上。还有好几种动态背景，之后补上。该功能由 theme-next-canvas-nest 插件提供，在根目录下执行如下命令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;theme-next-canvas-nest themes&#x2F;next&#x2F;source&#x2F;lib&#x2F;canvas-nest</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/03/21/hexoui/6159252dd42a283458c39ee667f5c7ec14cebfb8.png" alt><br>然后在主题配置文件中找到canvas_nest，修改为：canvas_nest: true 。<br><img src="/2020/03/21/hexoui/2cf5e0fe9925bc3110a43744639f83b7ca137032.png" alt><br>保存后本地预览，可以看到线条漂浮聚合效果。<br><img src="/2020/03/21/hexoui/267f9e2f07082838d943ee5286d9a7074d08f1f4.jpeg" alt></p>
-<h3 id="4-文章添加结束标记"><a href="#4-文章添加结束标记" class="headerlink" title="4.文章添加结束标记"></a>4.文章添加结束标记</h3><p>在路径：themes\next\layout_macro下新建passage-end-tag.swig文件。<br><img src="/2020/03/21/hexoui/0d338744ebf81a4cf2eb8ce0916a6e5f242da680.png" alt><br>打开passage-end-tag.swig，粘贴以下代码：<br>`</p>
+<img data-src="/2020/03/21/hexoui/6159252dd42a283458c39ee667f5c7ec14cebfb8.png" class="">
+<p>然后在主题配置文件中找到canvas_nest，修改为：canvas_nest: true 。</p>
+<img data-src="/2020/03/21/hexoui/2cf5e0fe9925bc3110a43744639f83b7ca137032.png" class="">
+<p>保存后本地预览，可以看到线条漂浮聚合效果。</p>
+<img data-src="/2020/03/21/hexoui/267f9e2f07082838d943ee5286d9a7074d08f1f4.jpeg" class="">
+
+<h3 id="4-文章添加结束标记"><a href="#4-文章添加结束标记" class="headerlink" title="4.文章添加结束标记"></a>4.文章添加结束标记</h3><p>在路径：themes\next\layout_macro下新建passage-end-tag.swig文件。</p>
+<img data-src="/2020/03/21/hexoui/0d338744ebf81a4cf2eb8ce0916a6e5f242da680.png" class="">
+<p>打开passage-end-tag.swig，粘贴以下代码：<br>`</p>
   -------- 本文结束    感谢阅读 --------  
-<p>`<br>字体、颜色等等我按照我的喜好修改的，你们按照自己的喜好来。<br><img src="/2020/03/21/hexoui/72f082025aafa40febaafc9e97240d4979f019ce.png" alt><br>打开文件，路径：themes\next\layout_macro\post.swig，在post-body之后，post-footer之前（如果找不到位置的按照我下图的位置添加）添加以下代码：</p>
+<p>`<br>字体、颜色等等我按照我的喜好修改的，你们按照自己的喜好来。</p>
+<img data-src="/2020/03/21/hexoui/72f082025aafa40febaafc9e97240d4979f019ce.png" class="">
+<p>打开文件，路径：themes\next\layout_macro\post.swig，在post-body之后，post-footer之前（如果找不到位置的按照我下图的位置添加）添加以下代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if not is_index %&#125; </span><br><span class="line">&#123;% include &#39;passage-end-tag.swig&#39; %&#125; </span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/03/21/hexoui/f2deb48f8c5494eed937189216b5eef898257eed.jpeg" alt><br>打开主题配置文件，在最后位置添加以下代码：<br>post_end_tag:enabled: true # 是否开启文末的本文结束标记<br><img src="/2020/03/21/hexoui/55e736d12f2eb9383abcd72de9228b33e7dd6fe6.png" alt><br>保存后本地预览，打开文章后会发现文章结束时出现以下效果。<br><img src="/2020/03/21/hexoui/562c11dfa9ec8a13484cd410cc439f89a1ecc0b6.png" alt></p>
+<img data-src="/2020/03/21/hexoui/f2deb48f8c5494eed937189216b5eef898257eed.jpeg" class="">
+<p>打开主题配置文件，在最后位置添加以下代码：<br>post_end_tag:enabled: true # 是否开启文末的本文结束标记</p>
+<img data-src="/2020/03/21/hexoui/55e736d12f2eb9383abcd72de9228b33e7dd6fe6.png" class="">
+<p>保存后本地预览，打开文章后会发现文章结束时出现以下效果。</p>
+<img data-src="/2020/03/21/hexoui/562c11dfa9ec8a13484cd410cc439f89a1ecc0b6.png" class="">
+
 <h3 id="5-设置标题样式"><a href="#5-设置标题样式" class="headerlink" title="5.设置标题样式"></a>5.设置标题样式</h3><p>打开文件，路径：themes\next\source\css_common\components\post\post.styl<br>粘贴以下代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;*修改博文标题样式*&#x2F;</span><br><span class="line">.page-post-detail .post-title &#123;</span><br><span class="line">    font-size: 26px; </span><br><span class="line">    text-align: center; </span><br><span class="line">    word-break: break-word; </span><br><span class="line">    font-weight:$posts-expand-title-font-weight </span><br><span class="line">    background-color: #b9d3ee; </span><br><span class="line">    border-radius:.3em; </span><br><span class="line">    line-height:1em; </span><br><span class="line">    padding-bottom:.12em; </span><br><span class="line">    padding-top:.12em; </span><br><span class="line">    box-shadow:2px 2px 7px #9fb6cd; </span><br><span class="line">    +mobile() &#123; </span><br><span class="line">        font-size: 22px; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/03/21/hexoui/9358d109b3de9c822f9d937350c18e0c18d8431c.jpeg" alt><br>保存后本地预览，可以看到文章标题样式效果出现。<br><img src="/2020/03/21/hexoui/b17eca8065380cd7f7fa2e1d9d04a33258828124.jpeg" alt><br>如果想把主页文章标题一起修改，那么只要去掉 .page-post-detail即可。如下：<br><img src="/2020/03/21/hexoui/3812b31bb051f819a4229603e1f444eb2e73e73e.jpeg" alt><br>保存后本地预览，可以看到主页文章标题也已经有了样式。<br><img src="/2020/03/21/hexoui/0df3d7ca7bcb0a4697f82f985423f8226a60af7b.jpeg" alt></p>
-<h3 id="6-修改文章底部-为图标"><a href="#6-修改文章底部-为图标" class="headerlink" title="6.修改文章底部#为图标"></a>6.修改文章底部#为图标</h3><p>我们正常写的文章，如果有标签的话会在文章末尾出现标签。像这样：<br><img src="/2020/03/21/hexoui/024f78f0f736afc3ec22124c8e59e5c2b74512b6.png" alt><br>但是#不太好看，我们把它换为图标。<br>打开文件，路径：/themes/next/layout/_macro/post.swig 搜索找到 rel=”tag”&gt;# 把#替换为如下代码：<br><img src="/2020/03/21/hexoui/94cad1c8a786c917032d91abf27d7ec93bc75738.jpeg" alt><br>保存后本地预览，可以看到文章末尾标签不再是#了，换成标签图标了。<br><img src="/2020/03/21/hexoui/fc1f4134970a304ea5057e71ec88a980c8175cd8.png" alt></p>
-<h3 id="7-设置博客的图标"><a href="#7-设置博客的图标" class="headerlink" title="7.设置博客的图标"></a>7.设置博客的图标</h3><p>首先访问网站：<br><a href="https://www.easyicon.net/" target="_blank" rel="noopener">https://www.easyicon.net/</a><br>找一张（32*32）的ico图标，或者自己制作也行，图标名称改为favicon.ico 。放在路径：/themes/next/source/images 里。<br><img src="/2020/03/21/hexoui/7a899e510fb30f245b1e5b11f6d5df45ac4b03e5.jpeg" alt><br>之后打开主题配置文件，搜索并找到favicon，修改为：<br>favicon:small: /images/favicon.ico medium: /images/favicon.ico<br><img src="/2020/03/21/hexoui/a1ec08fa513d269729be526710bbbcfd4316d865.jpeg" alt><br>保存后本地预览，可以看到博客图标已经不是默认的了。<br><img src="/2020/03/21/hexoui/a5c27d1ed21b0ef4436187ac99845fdc80cb3e78.jpeg" alt></p>
-<h3 id="8-创建标签页"><a href="#8-创建标签页" class="headerlink" title="8.创建标签页"></a>8.创建标签页</h3><p>看似最简单的一个问题搞得我差点心态崩了。请看我踩的坑。<br>新建标签页首先在根目录下执行命令：<br>hexo new page tags<br><img src="/2020/03/21/hexoui/279759ee3d6d55fb94cd85d55662414c21a4dd84.png" alt><br>执行后会在根目录source文件夹里新建tags。而index.md就是标签页。<br><img src="/2020/03/21/hexoui/b3b7d0a20cf431ad934ebb467476a2a92fdd98f3.png" alt><br>打开index.md，最后面添加一行type: “tags” 注意冒号后有一空格。<br><img src="/2020/03/21/hexoui/cf1b9d16fdfaaf516c881c1cb7149ae8f11f7af4.png" alt><br>保存之后本地预览，出现了错误，还是显示找不到标签。<br><img src="/2020/03/21/hexoui/c75c10385343fbf25d72b52af03ec48665388f27.png" alt><br>这个看似简单的问题真的是搞得我，查找了好多资料。在快要放弃时找到了，原来是Bug。在主题配置文件里，菜单设置里/后面应该没有空格直接跟||。但是主题默认的是有空格的。所以导致找不到标签页。<br><img src="/2020/03/21/hexoui/cefc1e178a82b901797a71be48cda7713812ef2a.jpeg" alt><br>删除中间的空格。<br><img src="/2020/03/21/hexoui/9213b07eca8065388c370ef7ac9daf42ac34823f.jpeg" alt><br>保存后本地预览，可以看到标签页已经可以使用了。至于标题是英语，换一下标题就行。<br><img src="/2020/03/21/hexoui/d1a20cf431adcbef6f535ba590ef20dba2cc9ff7.png" alt><br>在tags文件夹里的index.md文件把title修改为标签就OK 了。<br><img src="/2020/03/21/hexoui/8718367adab44aed5685c539885c8907a38bfbee.png" alt><br>看到已经完全OK了。太难了，这个坑的我。<br><img src="/2020/03/21/hexoui/1e30e924b899a9014f46a32322d5047d0208f57e.png" alt></p>
+<img data-src="/2020/03/21/hexoui/9358d109b3de9c822f9d937350c18e0c18d8431c.jpeg" class="">
+<p>保存后本地预览，可以看到文章标题样式效果出现。</p>
+<img data-src="/2020/03/21/hexoui/b17eca8065380cd7f7fa2e1d9d04a33258828124.jpeg" class="">
+<p>如果想把主页文章标题一起修改，那么只要去掉 .page-post-detail即可。如下：</p>
+<img data-src="/2020/03/21/hexoui/3812b31bb051f819a4229603e1f444eb2e73e73e.jpeg" class="">
+<p>保存后本地预览，可以看到主页文章标题也已经有了样式。</p>
+<img data-src="/2020/03/21/hexoui/0df3d7ca7bcb0a4697f82f985423f8226a60af7b.jpeg" class="">
+
+<h3 id="6-修改文章底部-为图标"><a href="#6-修改文章底部-为图标" class="headerlink" title="6.修改文章底部#为图标"></a>6.修改文章底部#为图标</h3><p>我们正常写的文章，如果有标签的话会在文章末尾出现标签。像这样：</p>
+<img data-src="/2020/03/21/hexoui/024f78f0f736afc3ec22124c8e59e5c2b74512b6.png" class="">
+<p>但是#不太好看，我们把它换为图标。<br>打开文件，路径：/themes/next/layout/_macro/post.swig 搜索找到 rel=”tag”&gt;# 把#替换为如下代码：</p>
+<img data-src="/2020/03/21/hexoui/94cad1c8a786c917032d91abf27d7ec93bc75738.jpeg" class="">
+<p>保存后本地预览，可以看到文章末尾标签不再是#了，换成标签图标了。</p>
+<img data-src="/2020/03/21/hexoui/fc1f4134970a304ea5057e71ec88a980c8175cd8.png" class="">
+
+<h3 id="7-设置博客的图标"><a href="#7-设置博客的图标" class="headerlink" title="7.设置博客的图标"></a>7.设置博客的图标</h3><p>首先访问网站：<br><a href="https://www.easyicon.net/" target="_blank" rel="noopener">https://www.easyicon.net/</a><br>找一张（32*32）的ico图标，或者自己制作也行，图标名称改为favicon.ico 。放在路径：/themes/next/source/images 里。</p>
+<img data-src="/2020/03/21/hexoui/7a899e510fb30f245b1e5b11f6d5df45ac4b03e5.jpeg" class="">
+<p>之后打开主题配置文件，搜索并找到favicon，修改为：<br>favicon:small: /images/favicon.ico medium: /images/favicon.ico</p>
+<img data-src="/2020/03/21/hexoui/a1ec08fa513d269729be526710bbbcfd4316d865.jpeg" class="">
+<p>保存后本地预览，可以看到博客图标已经不是默认的了。</p>
+<img data-src="/2020/03/21/hexoui/a5c27d1ed21b0ef4436187ac99845fdc80cb3e78.jpeg" class="">
+
+<h3 id="8-创建标签页"><a href="#8-创建标签页" class="headerlink" title="8.创建标签页"></a>8.创建标签页</h3><p>看似最简单的一个问题搞得我差点心态崩了。请看我踩的坑。<br>新建标签页首先在根目录下执行命令：<br>hexo new page tags</p>
+<img data-src="/2020/03/21/hexoui/279759ee3d6d55fb94cd85d55662414c21a4dd84.png" class="">
+<p>执行后会在根目录source文件夹里新建tags。而index.md就是标签页。</p>
+<img data-src="/2020/03/21/hexoui/b3b7d0a20cf431ad934ebb467476a2a92fdd98f3.png" class="">
+<p>打开index.md，最后面添加一行type: “tags” 注意冒号后有一空格。</p>
+<img data-src="/2020/03/21/hexoui/cf1b9d16fdfaaf516c881c1cb7149ae8f11f7af4.png" class="">
+<p>保存之后本地预览，出现了错误，还是显示找不到标签。</p>
+<img data-src="/2020/03/21/hexoui/c75c10385343fbf25d72b52af03ec48665388f27.png" class="">
+<p>这个看似简单的问题真的是搞得我，查找了好多资料。在快要放弃时找到了，原来是Bug。在主题配置文件里，菜单设置里/后面应该没有空格直接跟||。但是主题默认的是有空格的。所以导致找不到标签页。</p>
+<img data-src="/2020/03/21/hexoui/cefc1e178a82b901797a71be48cda7713812ef2a.jpeg" class="">
+<p>删除中间的空格。</p>
+<img data-src="/2020/03/21/hexoui/9213b07eca8065388c370ef7ac9daf42ac34823f.jpeg" class="">
+<p>保存后本地预览，可以看到标签页已经可以使用了。至于标题是英语，换一下标题就行。</p>
+<img data-src="/2020/03/21/hexoui/d1a20cf431adcbef6f535ba590ef20dba2cc9ff7.png" class="">
+<p>在tags文件夹里的index.md文件把title修改为标签就OK 了。</p>
+<img data-src="/2020/03/21/hexoui/8718367adab44aed5685c539885c8907a38bfbee.png" class="">
+<p>看到已经完全OK了。太难了，这个坑的我。</p>
+<img data-src="/2020/03/21/hexoui/1e30e924b899a9014f46a32322d5047d0208f57e.png" class="">
+
 <h3 id="9-创建分类页"><a href="#9-创建分类页" class="headerlink" title="9.创建分类页"></a>9.创建分类页</h3><p>创建分类页、关于页等等菜单与第8步一样。<br>命令：<br><code>hexo new page categories</code><br>修改.md文件，主要title和type，type为categories。相对应。</p>
 <h3 id="10-创建关于页"><a href="#10-创建关于页" class="headerlink" title="10.创建关于页"></a>10.创建关于页</h3><p>命令：<br><code>hexo new page about</code><br>修改.md文件，主要title和type，type为about。相对应。</p>
-<h3 id="11-显示当前浏览进度"><a href="#11-显示当前浏览进度" class="headerlink" title="11.显示当前浏览进度"></a>11.显示当前浏览进度</h3><p>打开主题配置文件，搜索找到b2t和scrollpercent。修改为true。<br><img src="/2020/03/21/hexoui/55e736d12f2eb9381615e382e9228b33e5dd6f08.png" alt><br>保存后本地预览，效果如图。<br><img src="/2020/03/21/hexoui/94cad1c8a786c917be50d7fff57d7ec93ac7576f.jpeg" alt></p>
-<h3 id="12-个性化回到顶部"><a href="#12-个性化回到顶部" class="headerlink" title="12.个性化回到顶部"></a>12.个性化回到顶部</h3><p>自己找一张图片，或者直接用我这张。<br>下载链接：<br><a href="https://www.lanzous.com/i8nozmh" target="_blank" rel="noopener">https://www.lanzous.com/i8nozmh</a><br>把图片放在source\images\ 下。<br><img src="/2020/03/21/hexoui/4e4a20a4462309f763a4989b494e02f5d6cad632.jpeg" alt><br>打开文件，路径：themes\next\source\css_custom\custom.styl。在最后粘贴以下代码：</p>
+<h3 id="11-显示当前浏览进度"><a href="#11-显示当前浏览进度" class="headerlink" title="11.显示当前浏览进度"></a>11.显示当前浏览进度</h3><p>打开主题配置文件，搜索找到b2t和scrollpercent。修改为true。</p>
+<img data-src="/2020/03/21/hexoui/55e736d12f2eb9381615e382e9228b33e5dd6f08.png" class="">
+<p>保存后本地预览，效果如图。</p>
+<img data-src="/2020/03/21/hexoui/94cad1c8a786c917be50d7fff57d7ec93ac7576f.jpeg" class="">
+
+<h3 id="12-个性化回到顶部"><a href="#12-个性化回到顶部" class="headerlink" title="12.个性化回到顶部"></a>12.个性化回到顶部</h3><p>自己找一张图片，或者直接用我这张。<br>下载链接：<br><a href="https://www.lanzous.com/i8nozmh" target="_blank" rel="noopener">https://www.lanzous.com/i8nozmh</a><br>把图片放在source\images\ 下。</p>
+<img data-src="/2020/03/21/hexoui/4e4a20a4462309f763a4989b494e02f5d6cad632.jpeg" class="">
+<p>打开文件，路径：themes\next\source\css_custom\custom.styl。在最后粘贴以下代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;自定义回到顶部样式</span><br><span class="line">.back-to-top &#123;</span><br><span class="line">    right: 60px; </span><br><span class="line">    width: 70px; &#x2F;&#x2F;图片素材宽度 </span><br><span class="line">    height: 900px; &#x2F;&#x2F;图片素材高度 top: -900px; </span><br><span class="line">    bottom: unset; </span><br><span class="line">    transition: all .5s ease-in-out; </span><br><span class="line">    background: url(&quot;&#x2F;images&#x2F;scroll.png&quot;); </span><br><span class="line">    &#x2F;&#x2F;隐藏箭头图标 &gt; i &#123; </span><br><span class="line">        display: none; </span><br><span class="line">        &#125; </span><br><span class="line">    &amp;.back-to-top-on &#123; </span><br><span class="line">        bottom: unset; </span><br><span class="line">        top: 100vh &lt; (900px + 200px) ? calc( 100vh - 900px - 200px ) : 0px; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/03/21/hexoui/c2fdfc039245d688a25789d998827318d21b243f.jpeg" alt><br>保存后本地预览，就可以看到动态效果了，但是这种返回顶部要使第11步的两项为false，否则会出现Bug。<br><img src="/2020/03/21/hexoui/b7fd5266d01609245e190c2694473bfce6cd3491.jpeg" alt></p>
-<h3 id="13-修改博客字体"><a href="#13-修改博客字体" class="headerlink" title="13.修改博客字体"></a>13.修改博客字体</h3><p>访问网站：<br><a href="https://fonts.google.com/" target="_blank" rel="noopener">https://fonts.google.com/</a><br>找到自己想要设置的字体。<br>打开主题配置文件，找到font。按照这种形式修改字体类型。字体为刚才网站上的字体名称。修改后保存。<br><img src="/2020/03/21/hexoui/d1a20cf431adcbeff597ee1691ef20dba2cc9fc1.jpeg" alt></p>
-<h3 id="14-添加站内搜索"><a href="#14-添加站内搜索" class="headerlink" title="14.添加站内搜索"></a>14.添加站内搜索</h3><p>首先安装插件，输入以下两个命令：<br>npm install hexo-generator-search –savenpm install hexo-generator-searchdb –save<br>之后先在站点配置里末尾增加以下代码：<br><code>search:path: search.xml field: post format: html limit: 10000</code><br><img src="/2020/03/21/hexoui/279759ee3d6d55fb0533732b2d62414c21a4dd88.jpeg" alt><br>再在主题配置文件里搜索找到local_search修改为如下：<br>local_search:enable: true<br><img src="/2020/03/21/hexoui/9a504fc2d5628535a4711b11acaf78c0a7ef6337.jpeg" alt><br>保存后本地预览，效果如下：<br><img src="/2020/03/21/hexoui/5cc0a2ded7964e8b591517be537bd74c5961.gif" alt></p>
-<p>15.去掉文章中图片默认的边框<br>打开文件，路径：/themes/next/source/css/_common/components/post/post-expand.styl。<br>找到img，把border修改为none。<br><img src="/2020/03/21/hexoui/35a85edf8db1cb13ffc1a9e2e614584893584b59.png" alt><br>保存后本地显示，文章中的图片就没有边框了。<br><img src="/2020/03/21/hexoui/8435e5dde71190efa3cacb29f55b9310fcfa60dd.jpeg" alt></p>
+<img data-src="/2020/03/21/hexoui/c2fdfc039245d688a25789d998827318d21b243f.jpeg" class="">
+<p>保存后本地预览，就可以看到动态效果了，但是这种返回顶部要使第11步的两项为false，否则会出现Bug。</p>
+<img data-src="/2020/03/21/hexoui/b7fd5266d01609245e190c2694473bfce6cd3491.jpeg" class="">
+
+<h3 id="13-修改博客字体"><a href="#13-修改博客字体" class="headerlink" title="13.修改博客字体"></a>13.修改博客字体</h3><p>访问网站：<br><a href="https://fonts.google.com/" target="_blank" rel="noopener">https://fonts.google.com/</a><br>找到自己想要设置的字体。<br>打开主题配置文件，找到font。按照这种形式修改字体类型。字体为刚才网站上的字体名称。修改后保存。</p>
+<img data-src="/2020/03/21/hexoui/d1a20cf431adcbeff597ee1691ef20dba2cc9fc1.jpeg" class="">
+
+<h3 id="14-添加站内搜索"><a href="#14-添加站内搜索" class="headerlink" title="14.添加站内搜索"></a>14.添加站内搜索</h3><p>首先安装插件，输入以下两个命令：<br>npm install hexo-generator-search –savenpm install hexo-generator-searchdb –save<br>之后先在站点配置里末尾增加以下代码：<br><code>search:path: search.xml field: post format: html limit: 10000</code></p>
+<img data-src="/2020/03/21/hexoui/279759ee3d6d55fb0533732b2d62414c21a4dd88.jpeg" class="">
+<p>再在主题配置文件里搜索找到local_search修改为如下：<br>local_search:enable: true</p>
+<img data-src="/2020/03/21/hexoui/9a504fc2d5628535a4711b11acaf78c0a7ef6337.jpeg" class="">
+<p>保存后本地预览，效果如下：</p>
+<img data-src="/2020/03/21/hexoui/5cc0a2ded7964e8b591517be537bd74c5961.gif" class="">
+
+<p>15.去掉文章中图片默认的边框<br>打开文件，路径：/themes/next/source/css/_common/components/post/post-expand.styl。<br>找到img，把border修改为none。</p>
+<img data-src="/2020/03/21/hexoui/35a85edf8db1cb13ffc1a9e2e614584893584b59.png" class="">
+<p>保存后本地显示，文章中的图片就没有边框了。</p>
+<img data-src="/2020/03/21/hexoui/8435e5dde71190efa3cacb29f55b9310fcfa60dd.jpeg" class="">
+
+<p>我的第一个博客文件</p>
 <p>转载来源：<a href="https://baijiahao.baidu.com/s?id=1655730405416444778&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">https://baijiahao.baidu.com/s?id=1655730405416444778&amp;wfr=spider&amp;for=pc</a></p>
 
     </div>
@@ -280,6 +461,55 @@
     
     
     
+        <div class="reward-container">
+  <div>有你就有世界，感谢有你，明.</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="常青藤 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="常青藤 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>常青藤
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2020/03/21/hexoui/" title="Hexo+ NexT 博客美化配置教程一">http://yoursite.com/2020/03/21/hexoui/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <div>
+        
+          <div>
+    
+        <div style="text-align:left;font-size:14px;">
+<p style="text-align:center;color: #ccc;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</p>
+        </div>
+    
+</div>
+        
+      </div>
 
       <footer class="post-footer">
 
@@ -292,7 +522,10 @@
     <a href="/2020/03/20/mountefi/" rel="prev" title="最简单的挂载EFI分区方案">
       <i class="fa fa-chevron-left"></i> 最简单的挂载EFI分区方案
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/03/24/mousetx/" rel="next" title="Hexo博客+Next主题鼠标点击特效">
+      Hexo博客+Next主题鼠标点击特效 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -306,6 +539,7 @@
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -359,16 +593,20 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">常青藤</p>
-  <div class="site-description" itemprop="description"></div>
+  <div class="site-description" itemprop="description">软件、教程分享，关注黑苹果，phthon等</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
       </div>
   </nav>
 </div>
@@ -396,17 +634,42 @@
   &copy; 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">常青藤</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">23k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">21 分钟</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.2
-  </div>
 
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
 
 
@@ -421,6 +684,9 @@
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -429,7 +695,7 @@
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/pisces.js"></script>
+<script src="/js/schemes/muse.js"></script>
 
 
 <script src="/js/next-boot.js"></script>
@@ -442,6 +708,10 @@
 
 
 
+  
+<script src="/js/local-search.js"></script>
+
+
 
 
 
@@ -457,5 +727,40 @@
 
   
 
-</body>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'mcxKFwUU84xk4Tecjp5g62zY-gzGzoHsz',
+      appKey     : '0Llop8ji91mKA4aFxvbKnsW3',
+      placeholder: "说点什么吧",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+
+  
+  
+    <script src="/js/cursor/text.js"></script>
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"superSample":2,"width":200,"height":350,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body>
 </html>
